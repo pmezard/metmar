@@ -2,6 +2,8 @@ package main
 
 import (
 	"bytes"
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -64,6 +66,11 @@ func formatReport(b *Bulletin) string {
 	return buf.String()
 }
 
+func hashReport(report string) string {
+	h := sha256.Sum256([]byte(report))
+	return hex.EncodeToString(h[:])
+}
+
 func fetchWeather() (string, error) {
 	url := "http://www.meteofrance.com/mf3-rpc-portlet/rest/bulletins/cote/3/bulletinsMarineMetropole"
 	rsp, err := http.Get(url)
@@ -91,6 +98,13 @@ func formatJsonWeather(w http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		w.WriteHeader(500)
 		fmt.Fprintf(w, "error: %s\n", err)
+		return
+	}
+	h := hashReport(report)
+	w.Header().Set("ETag", h)
+	etag := req.Header.Get("If-None-Match")
+	if etag == h {
+		w.WriteHeader(304)
 		return
 	}
 	fmt.Fprintf(w, "%s", report)
