@@ -182,7 +182,7 @@ func formatAreas(t *template.Template, areas []CoastalArea) (string, error) {
 	data := []Area{}
 	for _, area := range areas {
 		data = append(data, Area{
-			URL:  "/areas/" + area.Id,
+			URL:  "areas/" + area.Id,
 			Name: area.URL,
 		})
 	}
@@ -222,18 +222,19 @@ func formatJsonAreas(t *template.Template, w http.ResponseWriter, req *http.Requ
 }
 
 func metmar(args []string) error {
-	if len(args) != 1 {
-		return fmt.Errorf("web server address expected")
+	if len(args) != 2 {
+		return fmt.Errorf("public URL prefix and web server address expected")
 	}
-	addr := args[0]
+	prefix := args[0]
+	addr := args[1]
 	t, err := template.New("areas").Parse(html)
 	if err != nil {
 		return err
 	}
-	http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+	http.HandleFunc(prefix+"/", func(w http.ResponseWriter, req *http.Request) {
 		formatJsonAreas(t, w, req)
 	})
-	http.HandleFunc("/areas/", formatJsonWeather)
+	http.HandleFunc(prefix+"/areas/", formatJsonWeather)
 	return http.ListenAndServe(addr, nil)
 }
 
