@@ -11,6 +11,8 @@ import (
 	"os"
 	"path"
 	"strings"
+
+	"github.com/daaku/go.httpgzip"
 )
 
 type Region struct {
@@ -231,11 +233,12 @@ func metmar(args []string) error {
 	if err != nil {
 		return err
 	}
-	http.HandleFunc(prefix+"/", func(w http.ResponseWriter, req *http.Request) {
+	mux := http.NewServeMux()
+	mux.HandleFunc(prefix+"/", func(w http.ResponseWriter, req *http.Request) {
 		formatJsonAreas(t, w, req)
 	})
-	http.HandleFunc(prefix+"/areas/", formatJsonWeather)
-	return http.ListenAndServe(addr, nil)
+	mux.HandleFunc(prefix+"/areas/", formatJsonWeather)
+	return http.ListenAndServe(addr, httpgzip.NewHandler(mux))
 }
 
 func main() {
