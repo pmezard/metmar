@@ -1,0 +1,192 @@
+{
+    "bulletinsMarineAntillesGuyane": [
+        {
+            "name": "cote",
+            "zones": [
+                {
+                    "id": "mart",
+                    "img": "",
+                    "url": "martinique"
+                },
+                {
+                    "id": "guya",
+                    "img": "",
+                    "url": "guyane"
+                },
+                {
+                    "id": "idn",
+                    "img": "",
+                    "url": "iles-du-nord"
+                },
+                {
+                    "id": "guad",
+                    "img": "",
+                    "url": "guadeloupe"
+                }
+            ]
+        },
+        {
+            "name": "large",
+            "zones": [
+                {
+                    "id": "ant",
+                    "img": "",
+                    "url": "antilles"
+                },
+                {
+                    "id": "guy-larg",
+                    "img": "",
+                    "url": "large-guyane"
+                }
+            ]
+        }
+    ],
+    "bulletinsMarineMayotte": [
+        {
+            "name": "grandlarge",
+            "zones": [
+                {
+                    "id": "reun",
+                    "img": "",
+                    "url": "reunion"
+                }
+            ]
+        }
+    ],
+    "bulletinsMarineMetropole": [
+        {
+            "name": "cote",
+            "zones": [
+                {
+                    "id": "1",
+                    "img": "",
+                    "url": "frontiere-belge-a-baie-de-somme"
+                },
+                {
+                    "id": "2",
+                    "img": "",
+                    "url": "baie-de-somme-au-cap-de-la-hague"
+                },
+                {
+                    "id": "3",
+                    "img": "",
+                    "url": "cap-de-la-hague-a-penmarch"
+                },
+                {
+                    "id": "4",
+                    "img": "",
+                    "url": "penmarch-a-anse-aiguillon"
+                },
+                {
+                    "id": "5",
+                    "img": "",
+                    "url": "anse-aiguillon-a-frontiere-espagnole"
+                },
+                {
+                    "id": "6",
+                    "img": "",
+                    "url": "frontiere-espagnole-a-port-camargue"
+                },
+                {
+                    "id": "7",
+                    "img": "",
+                    "url": "port-camargue-a-saint-raphael"
+                },
+                {
+                    "id": "8",
+                    "img": "",
+                    "url": "saint-raphael-a-menton"
+                },
+                {
+                    "id": "9",
+                    "img": "",
+                    "url": "zone-cotiere-corse"
+                }
+            ]
+        },
+        {
+            "name": "large",
+            "zones": [
+                {
+                    "hide": true,
+                    "id": "me-mns",
+                    "img": "imglarge",
+                    "url": "sud-mer-du-nord-et-est-manche"
+                },
+                {
+                    "id": "m-mns",
+                    "img": "imglarge",
+                    "url": "sud-mer-du-nord-et-manche"
+                },
+                {
+                    "id": "man",
+                    "img": "imglarge",
+                    "url": "manche"
+                },
+                {
+                    "id": "atl-mn",
+                    "img": "imglarge",
+                    "url": "atlantique-et-mer-du-nord"
+                },
+                {
+                    "id": "patl-mo",
+                    "img": "imglarge",
+                    "url": "proche-atlantique-et-manche-ouest"
+                },
+                {
+                    "id": "gasc",
+                    "img": "imglarge",
+                    "url": "golfe-de-gascogne"
+                },
+                {
+                    "hide": true,
+                    "id": "atl",
+                    "img": "imglarge",
+                    "url": "atlantique"
+                },
+                {
+                    "id": "medon",
+                    "img": "imglarge",
+                    "url": "nord-mediterranee-occidentale"
+                }
+            ]
+        },
+        {
+            "name": "grandlarge",
+            "zones": [
+                {
+                    "id": "met2",
+                    "img": "imgmetarea2",
+                    "url": "metarea2"
+                },
+                {
+                    "id": "medo",
+                    "img": "imgmetarea3",
+                    "url": "metarea3-mediterranee-occidentale"
+                }
+            ]
+        }
+    ],
+    "bulletinsMarineReunion": [
+        {
+            "name": "cote",
+            "zones": [
+                {
+                    "id": "reun",
+                    "img": "",
+                    "url": "reunion"
+                }
+            ]
+        },
+        {
+            "name": "grandlarge",
+            "zones": [
+                {
+                    "id": "reun",
+                    "img": "",
+                    "url": "reunion"
+                }
+            ]
+        }
+    ]
+}

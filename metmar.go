@@ -6,8 +6,10 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"html/template"
 	"net/http"
 	"os"
+	"path"
 	"strings"
 )
 
@@ -71,20 +73,29 @@ func hashReport(report string) string {
 	return hex.EncodeToString(h[:])
 }
 
-func fetchWeather() (string, error) {
-	url := "http://www.meteofrance.com/mf3-rpc-portlet/rest/bulletins/cote/3/bulletinsMarineMetropole"
+func getJson(url string, output interface{}) error {
 	rsp, err := http.Get(url)
 	if err != nil {
-		return "", fmt.Errorf("could not fetch weather: %s", err)
+		return fmt.Errorf("could not get %s: %s", url, err)
 	}
 	defer rsp.Body.Close()
 	if rsp.StatusCode != 200 {
-		return "", fmt.Errorf("failed to fetch weather: %s", rsp.Status)
+		return fmt.Errorf("failed to get %s: %s", url, rsp.Status)
 	}
-	reports := []*Bulletin{}
-	err = json.NewDecoder(rsp.Body).Decode(&reports)
+	err = json.NewDecoder(rsp.Body).Decode(output)
 	if err != nil {
-		return "", fmt.Errorf("could not decode json response: %s", err)
+		return fmt.Errorf("could not decode json response for %s: %s", url, err)
+	}
+	return nil
+}
+
+func fetchWeather(id string) (string, error) {
+	url := "http://www.meteofrance.com/mf3-rpc-portlet/rest/bulletins/cote/" + id +
+		"/bulletinsMarineMetropole"
+	reports := []*Bulletin{}
+	err := getJson(url, &reports)
+	if err != nil {
+		return "", err
 	}
 	if len(reports) <= 0 {
 		return "", fmt.Errorf("no report retrieved")
@@ -93,7 +104,8 @@ func fetchWeather() (string, error) {
 }
 
 func formatJsonWeather(w http.ResponseWriter, req *http.Request) {
-	report, err := fetchWeather()
+	id := path.Base(req.URL.Path)
+	report, err := fetchWeather(id)
 	w.Header().Set("Content-Type", "text/plain;charset=utf-8")
 	if err != nil {
 		w.WriteHeader(500)
@@ -110,12 +122,118 @@ func formatJsonWeather(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintf(w, "%s", report)
 }
 
+type CoastalArea struct {
+	Id  string
+	URL string
+}
+
+func fetchAreas() ([]CoastalArea, error) {
+	type Area struct {
+		Id  string `json:"id"`
+		URL string `json:"url"`
+	}
+
+	type AreaGroup struct {
+		Name  string `json:"name"`
+		Areas []Area `json:"zones"`
+	}
+
+	url := "http://www.meteofrance.com/mf3-rpc-portlet/js/datas/bulletins_marine.json"
+	groups := map[string][]AreaGroup{}
+	err := getJson(url, &groups)
+	if err != nil {
+		return nil, err
+	}
+	group, ok := groups["bulletinsMarineMetropole"]
+	if !ok {
+		return nil, fmt.Errorf("cannot extract metropole areas")
+	}
+	areas := []CoastalArea{}
+	for _, g := range group {
+		if g.Name != "cote" {
+			continue
+		}
+		for _, a := range g.Areas {
+			areas = append(areas, CoastalArea{
+				Id:  a.Id,
+				URL: a.URL,
+			})
+		}
+	}
+	return areas, nil
+}
+
+const (
+	html = `<html>
+<body>
+	{{range .}}
+		<a href="{{.URL}}">{{.Name}}</a><br/>
+	{{end}}
+</body>
+</html>
+`
+)
+
+func formatAreas(t *template.Template, areas []CoastalArea) (string, error) {
+	type Area struct {
+		URL  string
+		Name string
+	}
+	data := []Area{}
+	for _, area := range areas {
+		data = append(data, Area{
+			URL:  "/areas/" + area.Id,
+			Name: area.URL,
+		})
+	}
+	w := &bytes.Buffer{}
+	err := t.Execute(w, data)
+	if err != nil {
+		return "", err
+	}
+	return w.String(), nil
+}
+
+func renderAreas(t *template.Template) (string, error) {
+	areas, err := fetchAreas()
+	if err != nil {
+		return "", err
+	}
+	return formatAreas(t, areas)
+}
+
+func formatJsonAreas(t *template.Template, w http.ResponseWriter, req *http.Request) {
+	areas, err := renderAreas(t)
+	if err != nil {
+		w.Header().Set("Content-Type", "text/plain;charset=utf-8")
+		w.WriteHeader(500)
+		fmt.Fprintf(w, "error: %s\n", err)
+		return
+	}
+	w.Header().Set("Content-Type", "text/html;charset=utf-8")
+	h := hashReport(areas)
+	w.Header().Set("ETag", h)
+	etag := req.Header.Get("If-None-Match")
+	if etag == h {
+		w.WriteHeader(304)
+		return
+	}
+	fmt.Fprintf(w, "%s", areas)
+}
+
 func metmar(args []string) error {
 	if len(args) != 1 {
 		return fmt.Errorf("web server address expected")
 	}
 	addr := args[0]
-	http.HandleFunc("/", formatJsonWeather)
+	t, err := template.New("areas").Parse(html)
+	if err != nil {
+		return err
+	}
+	http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+		formatJsonAreas(t, w, req)
+	})
+	http.HandleFunc("/areas/", formatJsonWeather)
 	return http.ListenAndServe(addr, nil)
 }
 
