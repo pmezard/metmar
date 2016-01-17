@@ -16,6 +16,8 @@ func dispatch() error {
 	switch cmd {
 	case serveCmd.FullCommand():
 		return serveFn()
+	case galeCmd.FullCommand():
+		return galeFn()
 	}
 	return fmt.Errorf("unknown command: %s", cmd)
 }

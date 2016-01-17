@@ -7,3 +7,10 @@ fail to load in poor network conditions, you get a readable forecast in a
 single GET request. Isn't that nice?
 
 Data courtesy of Meteo France.
+
+## Extra Services
+
+The main service is run with "serve" command. Another service started with
+"gale" scans a directory for saved weather forecasts, extract the gale warning
+number if any and display it agains the day in the year. I am curious to see
+how it evolves.
