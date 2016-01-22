@@ -23,14 +23,20 @@
 </div>
 <script>
 var data = $DATA;
+var ref = $REF;
 var graph = new Rickshaw.Graph( {
 			interpolation: "linear",
 			element: document.querySelector("#chart"),
 			height: 600,
+            renderer: 'line',
 			series: [ {
 				color: 'steelblue',
 				data: data
-			} ]
+			},
+            {
+                color: 'red',
+                data: ref
+            } ]
 			} );
 var x_axis = new Rickshaw.Graph.Axis.Time( { graph: graph } );
 var hoverDetail = new Rickshaw.Graph.HoverDetail( {

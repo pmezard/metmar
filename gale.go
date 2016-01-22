@@ -101,21 +101,30 @@ func serveGaleWarnings(galeDir string, template []byte, w http.ResponseWriter,
 		YearDay int     `json:"yearday"`
 	}
 	offsets := []warningOffset{}
+	refs := []warningOffset{}
 	for _, w := range warnings {
 		deltaDays := w.Date.Sub(baseDate).Hours() / 24.
-		offsets = append(offsets, warningOffset{
+		offset := warningOffset{
 			X:       deltaDays,
 			Y:       float64(w.Number),
 			Date:    w.Date.Format("2006-01-02 15:04:05"),
 			YearDay: w.Date.YearDay(),
-		})
+		}
+		offsets = append(offsets, offset)
+		offset.Y = float64(offset.YearDay)
+		refs = append(refs, offset)
 	}
 
-	jsVar, err := json.Marshal(&offsets)
+	dataVar, err := json.Marshal(&offsets)
 	if err != nil {
 		return err
 	}
-	page := bytes.Replace(template, []byte("$DATA"), jsVar, -1)
+	refVar, err := json.Marshal(&refs)
+	if err != nil {
+		return err
+	}
+	page := bytes.Replace(template, []byte("$DATA"), dataVar, -1)
+	page = bytes.Replace(page, []byte("$REF"), refVar, -1)
 	w.Header().Set("Content-Type", "text/html")
 	_, err = w.Write(page)
 	return err
