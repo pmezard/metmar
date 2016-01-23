@@ -22,7 +22,7 @@ type GaleWarning struct {
 
 // Bulletin spécial: Avis de Grand frais à Coup de vent numéro 36
 var (
-	reWarning = regexp.MustCompile(`^\s*Bulletin spécial:.*(?:nr|numéro|n°)\s+(\d+)`)
+	reWarning = regexp.MustCompile(`^\s*Bulletin spécial:.*?(\d+)`)
 )
 
 // extractWarningNumber returns the gale warning number in supplied weatcher
