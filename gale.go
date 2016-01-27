@@ -91,6 +91,19 @@ func serveGaleWarnings(galeDir string, template []byte, w http.ResponseWriter,
 	if err != nil {
 		return err
 	}
+	// Add virtual beginning of year and current day points
+	now := time.Now()
+	jan1 := time.Date(now.Year(), time.January, 1, 0, 0, 0, 0, time.UTC)
+	if len(warnings) == 0 || jan1.Before(warnings[0].Date) {
+		warnings = append([]GaleWarning{GaleWarning{
+			Number: 0,
+			Date:   jan1,
+		}}, warnings...)
+	}
+	warnings = append(warnings, GaleWarning{
+		Number: warnings[len(warnings)-1].Number,
+		Date:   now,
+	})
 
 	baseDate := time.Date(2016, time.January, 1, 0, 0, 0, 0, time.UTC)
 
