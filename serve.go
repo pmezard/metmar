@@ -167,6 +167,9 @@ func fetchAreas() ([]CoastalArea, error) {
 
 const (
 	html = `<html>
+<head>
+	<title>Gale warning number evolution in Brest area</title>
+</head>
 <body>
 	{{range .}}
 		<a href="{{.URL}}">{{.Name}}</a><br/>
