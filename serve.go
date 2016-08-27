@@ -241,5 +241,6 @@ func serveFn() error {
 		formatJsonAreas(t, w, req)
 	})
 	mux.HandleFunc(prefix+"/areas/", formatJsonWeather)
+	fmt.Printf("serving on %s\n", addr)
 	return http.ListenAndServe(addr, httpgzip.NewHandler(mux))
 }

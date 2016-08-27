@@ -200,5 +200,6 @@ func galeFn() error {
 	})
 	http.Handle(prefix+"/scripts/", http.StripPrefix(prefix+"/scripts/",
 		http.FileServer(http.Dir("scripts"))))
+	fmt.Printf("serving on %s\n", addr)
 	return http.ListenAndServe(addr, nil)
 }
