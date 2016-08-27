@@ -11,6 +11,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"sort"
 	"strconv"
 	"time"
 )
@@ -52,6 +53,20 @@ var (
 	rePath = regexp.MustCompile(`^.*(\d{4}_\d{2}_\d{2}T\d{2}_\d{2}_\d{2})\.txt$`)
 )
 
+type sortedWarnings []GaleWarning
+
+func (s sortedWarnings) Len() int {
+	return len(s)
+}
+
+func (s sortedWarnings) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
+}
+
+func (s sortedWarnings) Less(i, j int) bool {
+	return s[i].Date.Before(s[j].Date)
+}
+
 // extractWarningNumbers returns the sequence of gale warnings extracted from
 // weather forecasts in supplied directory.
 func extractWarningNumbers(dir string) ([]GaleWarning, error) {
@@ -73,14 +88,24 @@ func extractWarningNumbers(dir string) ([]GaleWarning, error) {
 		if err != nil {
 			return err
 		}
-		if n > 0 {
-			warnings = append(warnings, GaleWarning{
-				Number: n,
-				Date:   d,
-			})
-		}
+		warnings = append(warnings, GaleWarning{
+			Number: n,
+			Date:   d,
+		})
 		return nil
 	})
+	sort.Sort(sortedWarnings(warnings))
+	// Fill intermediary reports without warnings with previous warning number
+	num := 1
+	for i, w := range warnings {
+		if w.Number != 0 {
+			num = w.Number
+		} else {
+			w := w
+			w.Number = num
+			warnings[i] = w
+		}
+	}
 	return warnings, err
 }
 
