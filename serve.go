@@ -40,6 +40,7 @@ func formatReport(b *Bulletin) string {
 		fmt.Fprintf(buf, format, args...)
 	}
 	wif := func(s string) {
+		s = strings.TrimSpace(s)
 		if s != "" {
 			s = strings.Replace(s, "<br />", "\n", -1)
 			w("%s\n", s)
