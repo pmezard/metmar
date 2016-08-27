@@ -43,7 +43,7 @@ func formatReport(b *Bulletin) string {
 		s = strings.TrimSpace(s)
 		if s != "" {
 			s = strings.Replace(s, "<br />", "\n", -1)
-			w("%s\n", s)
+			w("%s\n", strings.TrimRight(s, " \n"))
 		}
 	}
 	w("%s\n", b.Title)
