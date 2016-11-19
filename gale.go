@@ -13,6 +13,7 @@ import (
 	"regexp"
 	"sort"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -50,7 +51,7 @@ func extractWarningNumber(path string) (int, error) {
 }
 
 var (
-	rePath = regexp.MustCompile(`^.*(\d{4}_\d{2}_\d{2}T\d{2}_\d{2}_\d{2})\.txt$`)
+	rePath = regexp.MustCompile(`^.*(\d{4}_\d{2}_\d{2}T_?\d{2}_\d{2}_\d{2})\.txt$`)
 )
 
 type sortedWarnings []GaleWarning
@@ -80,7 +81,8 @@ func extractWarningNumbers(dir string) ([]GaleWarning, error) {
 		if m == nil {
 			return nil
 		}
-		d, err := time.Parse("2006_01_02T15_04_05", m[1])
+		date := strings.Replace(m[1], "T_", "T", -1)
+		d, err := time.Parse("2006_01_02T15_04_05", date)
 		if err != nil {
 			return err
 		}
