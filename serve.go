@@ -4,17 +4,16 @@ import (
 	"bytes"
 	"crypto/sha256"
 	"encoding/hex"
+	"encoding/json"
 	"fmt"
 	"html/template"
 	"io"
 	"net/http"
 	"path"
+	"regexp"
+	"strconv"
 	"strings"
 
-	"golang.org/x/text/encoding"
-	"golang.org/x/text/transform"
-
-	"github.com/PuerkitoBio/goquery"
 	httpgzip "github.com/daaku/go.httpgzip"
 )
 
@@ -43,20 +42,41 @@ func httpGet(url string, headers map[string]string) (io.ReadCloser, error) {
 	return rsp.Body, nil
 }
 
-func htmlGet(url string, headers map[string]string, enc encoding.Encoding) (
-	*goquery.Document, error) {
+type Region struct {
+	Title       string `json:"titreRegion"`
+	Situation   string
+	Observation string
+	WindAndSea  string `json:"ventEtMer"`
+	Swell       string `json:"houle"`
+	Weather     string `json:"ts"`
+	Visibility  string `json:"visi"`
+}
 
+type Echeance struct {
+	Title   string   `json:"titreEcheance"`
+	Kind    string   `json:"nomEcheance"`
+	Regions []Region `json:"region"`
+}
+
+type Report struct {
+	Title     string     `json:"titreBulletin"`
+	Special   string     `json:"bulletinSpecial"`
+	Header    string     `json:"chapeauBulletin"`
+	Footer    string     `json:"piedBulletin"`
+	Units     string     `json:"uniteBulletin"`
+	Echeances []Echeance `json:"echeance"`
+}
+
+func jsonGet(url string) ([]*Report, error) {
+	headers := map[string]string{}
 	r, err := httpGet(url, headers)
 	if err != nil {
 		return nil, err
 	}
 	defer r.Close()
-	var reader io.Reader = r
-	if enc != nil {
-		reader = transform.NewReader(reader, enc.NewDecoder())
-	}
-	//reader = &LogReader{r}
-	return goquery.NewDocumentFromReader(reader)
+	reports := []*Report{}
+	err = json.NewDecoder(r).Decode(&reports)
+	return reports, err
 }
 
 type Forecast struct {
@@ -65,48 +85,71 @@ type Forecast struct {
 	Content string
 }
 
-func htmlToText(spans *goquery.Selection) string {
-	var buf bytes.Buffer
+var (
+	reLines = regexp.MustCompile(`\n+`)
+)
 
-	for i := range spans.Nodes {
-		span := spans.Eq(i)
-		class, _ := span.Attr("class")
-		if class == "titre2" || class == "titre3" {
-			buf.WriteString("\n")
-		}
-		buf.WriteString(strings.TrimSpace(span.Text()) + "\n")
-	}
-	return buf.String()
+func htmlToText(html string) string {
+	s := strings.Replace(html, "<br />", "\n", -1)
+	s = strings.TrimSpace(s)
+	s = reLines.ReplaceAllString(s, "\n")
+	return s
 }
 
-func parseWeather(doc *goquery.Document) []Forecast {
-	forecasts := []Forecast{}
-	zones := doc.Find("div[class='affichebulletins']")
-	for i := range zones.Nodes {
-		zone := zones.Eq(i)
-		id, _ := zone.Attr("id")
-		title := zone.Find("h2").First().Text()
-		contentSel := zone.Find("span")
-		content := htmlToText(contentSel)
-		forecasts = append(forecasts, Forecast{
-			Id:      id,
-			Title:   title,
-			Content: content,
-		})
+func formatReport(reports []*Report) (*Forecast, error) {
+	if len(reports) != 2 {
+		return nil, fmt.Errorf("2 reports expected, go %d", len(reports))
 	}
-	return forecasts
+	// Coastal report
+	r := reports[1]
+	content := []string{}
+	content = append(content, r.Title, "\n\n")
+	content = append(content, htmlToText(r.Header), "\n")
+	content = append(content, htmlToText(r.Footer), "\n\n")
+	content = append(content, htmlToText(r.Special), "\n\n")
+	for _, e := range r.Echeances {
+		content = append(content, "# ", e.Title, "\n\n")
+		for _, a := range e.Regions {
+			parts := []string{
+				a.Situation,
+				a.Observation,
+				a.WindAndSea,
+				a.Swell,
+				a.Weather,
+				a.Visibility,
+			}
+			for _, part := range parts {
+				if part == "" {
+					continue
+				}
+				part = htmlToText(part)
+				part = strings.TrimSpace(part)
+				content = append(content, part, "\n")
+			}
+		}
+		content = append(content, "\n\n")
+	}
+	return &Forecast{
+		Title:   r.Title,
+		Content: strings.Join(content, ""),
+	}, nil
 }
 
 func fetchForecasts() ([]Forecast, error) {
-	url := "http://vigiprevi.meteofrance.com/data/VBFR02_LFPW_.txt"
-	headers := map[string]string{}
-	doc, err := htmlGet(url, headers, nil)
-	if err != nil {
-		return nil, err
-	}
-	forecasts := parseWeather(doc)
-	if len(forecasts) <= 0 {
-		return nil, fmt.Errorf("no forecast found")
+	urlFmt := "http://www.meteofrance.com/mf3-rpc-portlet/rest/bulletins/cote/%d/bulletinsMarineMetropole"
+	forecasts := []Forecast{}
+	for i := 1; i <= 9; i++ {
+		url := fmt.Sprintf(urlFmt, i)
+		reports, err := jsonGet(url)
+		if err != nil {
+			return nil, err
+		}
+		forecast, err := formatReport(reports)
+		if err != nil {
+			return nil, err
+		}
+		forecast.Id = strconv.FormatInt(int64(i), 10)
+		forecasts = append(forecasts, *forecast)
 	}
 	return forecasts, nil
 }
@@ -229,4 +272,20 @@ func serveFn() error {
 	mux.HandleFunc(prefix+"/areas/", serveForecast)
 	fmt.Printf("serving on %s\n", addr)
 	return http.ListenAndServe(addr, httpgzip.NewHandler(mux))
+}
+
+var (
+	parseCmd = app.Command("parse",
+		"fetch and parse current forecast, for debugging purpose")
+	parseId = parseCmd.Arg("id", "forecast identifier").Required().String()
+)
+
+func parseFn() error {
+	forecastId := *parseId
+	text, err := renderForecast(forecastId)
+	if err != nil {
+		return err
+	}
+	fmt.Println(text)
+	return nil
 }

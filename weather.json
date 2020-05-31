@@ -1,466 +1,354 @@
 [
     {
-        "bulletinSpecial": "Pas d'avis de vent fort en cours ni pr\u00e9vu.",
-        "chapeauBulletin": "Origine M\u00e9t\u00e9o-France .<br />Bulletin c\u00f4tier pour la bande des 20 milles du cap de la Hague \u00e0 la pointe de Penmarc'h.<br />Emis le vendredi 2 octobre 2015 \u00e0 18H30 l\u00e9gales.",
-        "dateDeBase": "2015-10-02 15:45:01",
-        "dateDeFin": "2015-10-09 18:00:00",
-        "dateDeProduction": "2015-10-02 15:45:01",
         "echeance": [
             {
-                "debutEcheance": "2015-10-02 00:00:00",
-                "finEcheance": "2015-10-02 06:00:00",
+                "titreEcheance": "Situation g\u00e9n\u00e9rale dimanche 31 mai 2020 \u00e0 00H00 UTC, et \u00e9volution",
+                "region": [
+                    {
+                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
+                        "situation": "Anticyclone autour de 1035 hPa sur la Scandinavie avec dorsale associ\u00e9e  1016/1018 hPa, s'\u00e9tendant sur les \u00eeles britanniques et la Manche. D\u00e9pression 1010 hPa sur la p\u00e9ninsule ib\u00e9rique remontant en fonds du golfe de Gascogne en fin de journ\u00e9e, averses orageuses associ\u00e9es.",
+                        "observation": null,
+                        "ventEtMer": null,
+                        "houle": null,
+                        "vent": null,
+                        "temperature": null,
+                        "temps": null,
+                        "etatMer": null,
+                        "ts": null,
+                        "visi": null,
+                        "indice": null,
+                        "idRegion": "cot3",
+                        "tmin": null,
+                        "tmax": null,
+                        "tmer": null
+                    }
+                ],
+                "debutEcheance": "2020-05-31 00:00:00",
+                "finEcheance": "2020-05-31 06:00:00",
                 "idEcheance": "sit1",
                 "nbRegion": 1,
-                "nomEcheance": "situation g\u00e9n\u00e9rale",
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": null,
-                        "idRegion": "cot3",
-                        "indice": null,
-                        "observation": null,
-                        "situation": "Anticyclone 1028 hPa sur les \u00eeles Britanniques, s'affaisse. Perturbation et basses pressions relatives 1018 hPa en fond de Golfe de Gascogne, se d\u00e9cale vers le centre de la France demain. Vent assez fort \u00e0 fort dimanche \u00e0 l'approche d'une perturbation.",
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": null,
-                        "vent": null,
-                        "ventEtMer": null,
-                        "visi": null
-                    }
-                ],
-                "titreEcheance": "Situation g\u00e9n\u00e9rale vendredi 2 octobre 2015 \u00e0 12H00 UTC et \u00e9volution"
+                "nomEcheance": "situation g\u00e9n\u00e9rale"
             },
             {
-                "debutEcheance": "2015-10-02 15:00:00",
-                "finEcheance": "2015-10-02 15:00:00",
+                "titreEcheance": "Observations le dimanche 31 mai 2020 \u00e0 03H00 UTC",
+                "region": [
+                    {
+                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
+                        "situation": null,
+                        "observation": "Ouessant : vent Est-Sud-Est 8 n\u0153uds,  1015 hPa en baisse.<br />Batz : vent Est 12 n\u0153uds.<br />Brignogan : vent Est 10 n\u0153uds.<br />Br\u00e9hat : vent Est-Sud-Est 8 n\u0153uds.<br />Cap de la Hague : vent Est 10 n\u0153uds,  1018 hPa en baisse,  clair ou peu nuageux,  visibilit\u00e9 5 milles.<br />Pointe du Raz : vent Est 19 n\u0153uds.",
+                        "ventEtMer": null,
+                        "houle": null,
+                        "vent": null,
+                        "temperature": null,
+                        "temps": null,
+                        "etatMer": null,
+                        "ts": null,
+                        "visi": null,
+                        "indice": null,
+                        "idRegion": "cot3",
+                        "tmin": null,
+                        "tmax": null,
+                        "tmer": null
+                    }
+                ],
+                "debutEcheance": "2020-05-31 03:00:00",
+                "finEcheance": "2020-05-31 03:00:00",
                 "idEcheance": "obs",
                 "nbRegion": 1,
-                "nomEcheance": "observations",
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": null,
-                        "idRegion": "cot3",
-                        "indice": null,
-                        "observation": "Ouessant : vent Nord-Est 17 n\u0153uds,  mer peu agit\u00e9e,  1018 hPa en baisse,  clair ou peu nuageux,  visibilit\u00e9 5 \u00e0 10 milles.<br />Batz : vent Est-Nord-Est 17 n\u0153uds, rafales 27 n\u0153uds,  mer peu agit\u00e9e,  nuageux avec \u00e9claircies,  visibilit\u00e9 5 \u00e0 10 milles.<br />Brignogan : vent Nord-Est 19 n\u0153uds,  mer peu agit\u00e9e,  1019 hPa en baisse,  clair ou peu nuageux,  visibilit\u00e9 5 \u00e0 10 milles.<br />Cap de la Hague : vent Est 17 n\u0153uds,  1021 hPa en baisse,  clair ou peu nuageux,  visibilit\u00e9 8 milles.<br />Pointe du Raz : vent Sud 10 n\u0153uds.",
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": null,
-                        "vent": null,
-                        "ventEtMer": null,
-                        "visi": null
-                    }
-                ],
-                "titreEcheance": "Observations le vendredi 2 octobre 2015 \u00e0 15H00 UTC"
+                "nomEcheance": "observations"
             },
             {
+                "titreEcheance": "Pr\u00e9visions pour la journ\u00e9e du dimanche 31 mai",
+                "region": [
+                    {
+                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
+                        "situation": null,
+                        "observation": null,
+                        "ventEtMer": "VENT : Est 3 \u00e0 4, localement 5 au large de Penmarc'h au d\u00e9but, fra\u00eechissant Nord-Est 4 \u00e0 5 de La Hague \u00e0 Ouessant l'apr\u00e8s-midi, puis 5 \u00e0 6 en fin de journ\u00e9e, mais devenant Variable 3 \u00e0 4 en mer d'Iroise l'apr\u00e8s-midi.<br /><br />MER : peu agit\u00e9e \u00e0 agit\u00e9e.",
+                        "houle": "HOULE : Ouest 0.5 \u00e0 1 m sur pointe Bretagne, non significative ailleurs.",
+                        "vent": null,
+                        "temperature": null,
+                        "temps": null,
+                        "etatMer": null,
+                        "ts": "TEMPS : beau temps ensoleill\u00e9.",
+                        "visi": "VISIBILITE : bonne.",
+                        "indice": null,
+                        "idRegion": "cot3",
+                        "tmin": null,
+                        "tmax": null,
+                        "tmer": null
+                    }
+                ],
+                "debutEcheance": null,
+                "finEcheance": null,
+                "idEcheance": "j0",
+                "nbRegion": 1,
+                "nomEcheance": null
+            },
+            {
+                "titreEcheance": "Pr\u00e9visions pour la nuit du dimanche 31 mai au lundi 1 juin",
+                "region": [
+                    {
+                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
+                        "situation": null,
+                        "observation": null,
+                        "ventEtMer": "VENT : Est \u00e0 Nord-Est 5 \u00e0 6, mollissant 4 \u00e0 5 en seconde partie de nuit.<br /><br />MER : peu agit\u00e9e \u00e0 agit\u00e9e.",
+                        "houle": "HOULE : Ouest 0.5 \u00e0 1 m sur pointe Bretagne, non significative ailleurs.",
+                        "vent": null,
+                        "temperature": null,
+                        "temps": null,
+                        "etatMer": null,
+                        "ts": "TEMPS : peu nuageux.",
+                        "visi": "VISIBILITE : bonne.",
+                        "indice": null,
+                        "idRegion": "cot3",
+                        "tmin": null,
+                        "tmax": null,
+                        "tmer": null
+                    }
+                ],
                 "debutEcheance": null,
                 "finEcheance": null,
                 "idEcheance": "n0",
                 "nbRegion": 1,
-                "nomEcheance": null,
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": "HOULE : Nord-Est 0.5 \u00e0 1 m de Br\u00e9hat \u00e0 la Pointe du Raz.",
-                        "idRegion": "cot3",
-                        "indice": null,
-                        "observation": null,
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": "TEMPS : passag\u00e8rement nuageux.",
-                        "vent": null,
-                        "ventEtMer": "VENT : Variable 1 \u00e0 3 en mer d'Iroise. Ailleurs, Est \u00e0 Nord-Est 4 \u00e0 5, mollissant progressivement 2 \u00e0 3.MER : peu agit\u00e9e \u00e0 agit\u00e9e, s'att\u00e9nuant.",
-                        "visi": "VISIBILITE : bonne."
-                    }
-                ],
-                "titreEcheance": "Pr\u00e9visions pour la nuit du vendredi 2 octobre au samedi 3 octobre"
+                "nomEcheance": null
             },
             {
+                "titreEcheance": "Pr\u00e9visions pour la journ\u00e9e du lundi 1 juin",
+                "region": [
+                    {
+                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
+                        "situation": null,
+                        "observation": null,
+                        "ventEtMer": "VENT : Nord-Est 4 \u00e0 5.<br /><br />MER : peu agit\u00e9e \u00e0 agit\u00e9e, s'att\u00e9nuant localement belle \u00e0 peu agit\u00e9e \u00e0 l'ouest du Cotentin l'apr\u00e8s-midi.",
+                        "houle": "HOULE : Ouest 0.5 \u00e0 1 m sur pointe Bretagne, non significative ailleurs.",
+                        "vent": null,
+                        "temperature": null,
+                        "temps": null,
+                        "etatMer": null,
+                        "ts": "TEMPS : beau temps ensoleill\u00e9.",
+                        "visi": "VISIBILITE : bonne.",
+                        "indice": null,
+                        "idRegion": "cot3",
+                        "tmin": null,
+                        "tmax": null,
+                        "tmer": null
+                    }
+                ],
                 "debutEcheance": null,
                 "finEcheance": null,
                 "idEcheance": "j1",
                 "nbRegion": 1,
-                "nomEcheance": null,
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": "HOULE : devenant partout non significative.",
-                        "idRegion": "cot3",
-                        "indice": null,
-                        "observation": null,
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": "TEMPS : beau temps passag\u00e8rement nuageux.",
-                        "vent": null,
-                        "ventEtMer": "VENT : Variable 1 \u00e0 3, parfois 4, d'Ouest dominant au sud d'Ouessant.MER : belle \u00e0 peu agit\u00e9e.",
-                        "visi": "VISIBILITE : bonne."
-                    }
-                ],
-                "titreEcheance": "Pr\u00e9visions pour la journ\u00e9e du samedi 3 octobre"
+                "nomEcheance": null
             },
             {
+                "titreEcheance": "Pr\u00e9visions pour la nuit du 1 au 2 et la journ\u00e9e du mardi 2 juin",
+                "region": [
+                    {
+                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
+                        "situation": null,
+                        "observation": null,
+                        "ventEtMer": "VENT : Nord \u00e0 Nord-Est 4 \u00e0 5, localement 6 en mer d'Iroise.<br /><br />MER : peu agit\u00e9e, localement agit\u00e9e de Br\u00e9hat \u00e0 Penmarc'h.",
+                        "houle": "HOULE de Nord \u00e0 Nord-Ouest 0,5 \u00e0 1 m.",
+                        "vent": null,
+                        "temperature": null,
+                        "temps": null,
+                        "etatMer": null,
+                        "ts": "TEMPS : Soleil pr\u00e9dominant.",
+                        "visi": "VISIBILITE : Bonne.",
+                        "indice": null,
+                        "idRegion": "cot3",
+                        "tmin": null,
+                        "tmax": null,
+                        "tmer": null
+                    }
+                ],
                 "debutEcheance": null,
                 "finEcheance": null,
                 "idEcheance": "j2",
                 "nbRegion": 1,
-                "nomEcheance": null,
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": "HOULE : non significative, puis Sud-Est 1.5 m le soir au sud d'Ouessant.",
-                        "idRegion": "cot3",
-                        "indice": null,
-                        "observation": null,
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": "TEMPS : devenant tr\u00e8s nuageux \u00e0 couvert. Pluie et bancs de brume l'apr\u00e8s-midi.",
-                        "vent": null,
-                        "ventEtMer": "VENT : s'orientant Sud 2 \u00e0 4 la nuit, fra\u00eechissant Sud-Est 5 \u00e0 7 d'est en ouest en journ\u00e9e. Vent fort gagnant aussi l'ouest Cotentin le soir.MER : belle \u00e0 peu agit\u00e9e, devenant peu agit\u00e9e \u00e0 agit\u00e9e, localement forte sur Pointe Bretagne.",
-                        "visi": "VISIBILITE : bonne, devenant moyenne \u00e0 parfois mauvaise sous pluie et brume."
-                    }
-                ],
-                "titreEcheance": "Tendance pour la nuit du 3  au 4 et la journ\u00e9e du dimanche 4 octobre"
-            },
-            {
-                "debutEcheance": null,
-                "finEcheance": null,
-                "idEcheance": "j3",
-                "nbRegion": 1,
-                "nomEcheance": null,
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": "HOULE : Petite houle de Sud \u00e0 Sud-Est s'orientant Ouest \u00e0 Sud-Ouest 1 \u00e0 3,5 m en fin de nuit,puis s'att\u00e9nuant 0,5 \u00e0 2 m.",
-                        "idRegion": "cot3",
-                        "indice": "VISIBILITE : Moyenne sous pr\u00e9cipitations.",
-                        "observation": null,
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": "TEMPS : Pluie.",
-                        "vent": null,
-                        "ventEtMer": "VENT : Sud \u00e0 Sud-Est 6 \u00e0 8, mollissant 4 \u00e0 5 \u00e0 la mi-journ\u00e9e, puis fra\u00eechissant 5 \u00e0 6. Fortes rafales.MER : De La Hague \u00e0 Br\u00e9hat mer peu agit\u00e9e \u00e0 agit\u00e9e, localement forte sur Ouest Cotentin.<br />De Br\u00e9hat \u00e0 Penmarc'h mer forte, devenant temporairement tr\u00e8s forte en milieu de nuit.",
-                        "visi": null
-                    }
-                ],
-                "titreEcheance": "Pr\u00e9visions pour la nuit du 4 au 5 et la journ\u00e9e du lundi 5 octobre"
-            },
-            {
-                "debutEcheance": null,
-                "finEcheance": null,
-                "idEcheance": "j4",
-                "nbRegion": 1,
-                "nomEcheance": null,
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": null,
-                        "idRegion": "cot3",
-                        "indice": "Indice de confiance : 3 sur 5",
-                        "observation": null,
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": null,
-                        "vent": null,
-                        "ventEtMer": "vent de secteur sud-ouest mod\u00e9r\u00e9 \u00e0 assez fort, risque tempo fort",
-                        "visi": null
-                    }
-                ],
-                "titreEcheance": "Tendance pour les jours suivants : Mardi 6 octobre"
-            },
-            {
-                "debutEcheance": null,
-                "finEcheance": null,
-                "idEcheance": "j5",
-                "nbRegion": 1,
-                "nomEcheance": null,
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": null,
-                        "idRegion": "cot3",
-                        "indice": "Indice de confiance : 3 sur 5",
-                        "observation": null,
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": null,
-                        "vent": null,
-                        "ventEtMer": "vent de secteur ouest mod\u00e9r\u00e9 \u00e0 assez fort",
-                        "visi": null
-                    }
-                ],
-                "titreEcheance": "Mercredi 7 octobre"
-            },
-            {
-                "debutEcheance": null,
-                "finEcheance": null,
-                "idEcheance": "j6",
-                "nbRegion": 1,
-                "nomEcheance": null,
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": null,
-                        "idRegion": "cot3",
-                        "indice": "Indice de confiance : 3 sur 5",
-                        "observation": null,
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": null,
-                        "vent": null,
-                        "ventEtMer": "vent de secteur sud-ouest mod\u00e9r\u00e9 \u00e0 assez fort",
-                        "visi": null
-                    }
-                ],
-                "titreEcheance": "Jeudi 8 octobre"
-            },
-            {
-                "debutEcheance": null,
-                "finEcheance": null,
-                "idEcheance": "j7",
-                "nbRegion": 1,
-                "nomEcheance": null,
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": null,
-                        "idRegion": "cot3",
-                        "indice": "Indice de confiance : 3 sur 5",
-                        "observation": null,
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": null,
-                        "vent": null,
-                        "ventEtMer": "vent de secteur sud-ouest mod\u00e9r\u00e9 \u00e0 assez fort, risque tempo fort",
-                        "visi": null
-                    }
-                ],
-                "titreEcheance": "Vendredi 9 octobre"
+                "nomEcheance": null
             }
         ],
+        "titreBulletin": "Bulletin c\u00f4te \u00e0 7 jours \"La Hague \u2013 Penmarc'h\" matin",
+        "uniteBulletin": "Vent moyen selon \u00e9chelle Beaufort.<br />Mer selon \u00e9chelle Douglas.<br />Heure l\u00e9gale = heure UTC+1 en hiver et heure UTC+2 en \u00e9t\u00e9.<br />Attention : en situation normale, les rafales peuvent \u00eatre sup\u00e9rieures de 40 % au vent moyen et les vagues maximales atteindre 2 fois la hauteur significative.",
+        "piedBulletin": "Prochain bulletin le dimanche 31 mai 2020, vers 12H45 l\u00e9gales",
+        "bulletinSpecial": "Pas d'avis de vent fort en cours ni pr\u00e9vu.",
+        "chapeauBulletin": "Origine M\u00e9t\u00e9o-France .<br />Bulletin c\u00f4tier pour la bande des 20 milles, du cap de la Hague \u00e0 la pointe de Penmarc'h.<br />Emis le dimanche 31 mai 2020 \u00e0 06H30 l\u00e9gales.",
+        "dateDeBase": "2020-05-31 03:45:04",
+        "dateDeFin": "2020-06-07 18:00:00",
+        "dateDeProduction": "2020-05-31 03:45:04",
         "idBulletin": null,
         "langueBulletin": "FR",
         "nbJourBulletin": null,
         "nomBulletin": null,
-        "piedBulletin": "Prochain bulletin le samedi 3 octobre 2015 vers 06H30 l\u00e9gales",
         "producteurBulletin": "CNP",
         "ridBulletin": null,
         "soustypeBulletin": "BMR",
-        "titreBulletin": "Bulletin c\u00f4te \u00e0 7 jours \"La Hague \u2013 Penmarc'h\" soir",
         "typeBulletin": "cote",
         "typePeriodeBulletin": "7J",
-        "uniteBulletin": "Vent moyen selon \u00e9chelle Beaufort.<br />Mer selon \u00e9chelle Douglas.<br />Heure l\u00e9gale = heure UTC+1 en hiver et heure UTC+2 en \u00e9t\u00e9.<br />Attention : en situation normale, les rafales peuvent \u00eatre sup\u00e9rieures de 40 % au vent moyen et les vagues maximales atteindre 2 fois la hauteur significative.",
         "zoneBulletin": "3"
     },
     {
-        "bulletinSpecial": "Pas d'avis de vent fort en cours ni pr\u00e9vu.",
-        "chapeauBulletin": "Origine M\u00e9t\u00e9o-France<br />Bulletin c\u00f4tier pour la bande des 20 milles du cap de la Hague \u00e0 la pointe de Penmarc'h du vendredi 2 octobre 2015 \u00e0 18H15 l\u00e9gales",
-        "dateDeBase": "2015-10-02 15:44:49",
-        "dateDeFin": "2015-10-04 18:00:00",
-        "dateDeProduction": "2015-10-02 15:44:49",
         "echeance": [
             {
-                "debutEcheance": "2015-10-02 00:00:00",
-                "finEcheance": "2015-10-02 06:00:00",
+                "titreEcheance": "Situation g\u00e9n\u00e9rale le dimanche 31 mai 2020 \u00e0 00H00 UTC, et \u00e9volution",
+                "region": [
+                    {
+                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
+                        "situation": "Anticyclone autour de 1035 hPa sur la Scandinavie avec dorsale associ\u00e9e  1016/1018 hPa, s'\u00e9tendant sur les \u00eeles britanniques et la Manche. D\u00e9pression 1010 hPa sur la p\u00e9ninsule ib\u00e9rique remontant en fonds du golfe de Gascogne en fin de journ\u00e9e, averses orageuses associ\u00e9es.",
+                        "observation": null,
+                        "ventEtMer": null,
+                        "houle": null,
+                        "vent": null,
+                        "temperature": null,
+                        "temps": null,
+                        "etatMer": null,
+                        "ts": null,
+                        "visi": null,
+                        "indice": null,
+                        "idRegion": "cot3",
+                        "tmin": null,
+                        "tmax": null,
+                        "tmer": null
+                    }
+                ],
+                "debutEcheance": "2020-05-31 00:00:00",
+                "finEcheance": "2020-05-31 06:00:00",
                 "idEcheance": "sit1",
                 "nbRegion": 1,
-                "nomEcheance": "situation g\u00e9n\u00e9rale",
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": null,
-                        "idRegion": "cot3",
-                        "indice": null,
-                        "observation": null,
-                        "situation": "Anticyclone 1028 hPa sur les \u00eeles Britanniques, s'affaisse. Perturbation et basses pressions relatives 1018 hPa en fond de Golfe de Gascogne, se d\u00e9cale vers le centre de la France demain. Vent assez fort \u00e0 fort dimanche \u00e0 l'approche d'une perturbation.",
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": null,
-                        "vent": null,
-                        "ventEtMer": null,
-                        "visi": null
-                    }
-                ],
-                "titreEcheance": "Situation g\u00e9n\u00e9rale le vendredi 2 octobre 2015 \u00e0 12H00 UTC et \u00e9volution"
+                "nomEcheance": "situation g\u00e9n\u00e9rale"
             },
             {
-                "debutEcheance": "2015-10-02 15:00:00",
-                "finEcheance": "2015-10-02 15:00:00",
+                "titreEcheance": "Observations le dimanche 31 mai 2020 \u00e0 03H00 UTC",
+                "region": [
+                    {
+                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
+                        "situation": null,
+                        "observation": "Ouessant : vent Est-Sud-Est 8 n\u0153uds,  1015 hPa en baisse.<br />Batz : vent Est 12 n\u0153uds.<br />Brignogan : vent Est 10 n\u0153uds.<br />Br\u00e9hat : vent Est-Sud-Est 8 n\u0153uds.<br />Cap de la Hague : vent Est 10 n\u0153uds,  1018 hPa en baisse,  clair ou peu nuageux,  visibilit\u00e9 5 milles.<br />Pointe du Raz : vent Est 19 n\u0153uds.",
+                        "ventEtMer": null,
+                        "houle": null,
+                        "vent": null,
+                        "temperature": null,
+                        "temps": null,
+                        "etatMer": null,
+                        "ts": null,
+                        "visi": null,
+                        "indice": null,
+                        "idRegion": "cot3",
+                        "tmin": null,
+                        "tmax": null,
+                        "tmer": null
+                    }
+                ],
+                "debutEcheance": "2020-05-31 03:00:00",
+                "finEcheance": "2020-05-31 03:00:00",
                 "idEcheance": "obs",
                 "nbRegion": 1,
-                "nomEcheance": "observations",
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": null,
-                        "idRegion": "cot3",
-                        "indice": null,
-                        "observation": "Ouessant : vent Nord-Est 17 n\u0153uds,  mer peu agit\u00e9e,  1018 hPa en baisse,  clair ou peu nuageux,  visibilit\u00e9 5 \u00e0 10 milles.<br />Batz : vent Est-Nord-Est 17 n\u0153uds, rafales 27 n\u0153uds,  mer peu agit\u00e9e,  nuageux avec \u00e9claircies,  visibilit\u00e9 5 \u00e0 10 milles.<br />Brignogan : vent Nord-Est 19 n\u0153uds,  mer peu agit\u00e9e,  1019 hPa en baisse,  clair ou peu nuageux,  visibilit\u00e9 5 \u00e0 10 milles.<br />Cap de la Hague : vent Est 17 n\u0153uds,  1021 hPa en baisse,  clair ou peu nuageux,  visibilit\u00e9 8 milles.<br />Pointe du Raz : vent Sud 10 n\u0153uds.",
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": null,
-                        "vent": null,
-                        "ventEtMer": null,
-                        "visi": null
-                    }
-                ],
-                "titreEcheance": "Observations le vendredi 2 octobre 2015 \u00e0 15H00 UTC"
+                "nomEcheance": "observations"
             },
             {
+                "titreEcheance": "Pr\u00e9visions pour la journ\u00e9e du dimanche 31 mai",
+                "region": [
+                    {
+                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
+                        "situation": null,
+                        "observation": null,
+                        "ventEtMer": "VENT : Est 3 \u00e0 4, localement 5 au large de Penmarc'h au d\u00e9but, fra\u00eechissant Nord-Est 4 \u00e0 5 de La Hague \u00e0 Ouessant l'apr\u00e8s-midi, puis 5 \u00e0 6 en fin de journ\u00e9e, mais devenant Variable 3 \u00e0 4 en mer d'Iroise l'apr\u00e8s-midi.<br /><br />MER : peu agit\u00e9e \u00e0 agit\u00e9e.",
+                        "houle": "HOULE : Ouest 0.5 \u00e0 1 m sur pointe Bretagne, non significative ailleurs.",
+                        "vent": null,
+                        "temperature": null,
+                        "temps": null,
+                        "etatMer": null,
+                        "ts": "TEMPS : beau temps ensoleill\u00e9.",
+                        "visi": "VISIBILITE : bonne.",
+                        "indice": null,
+                        "idRegion": "cot3",
+                        "tmin": null,
+                        "tmax": null,
+                        "tmer": null
+                    }
+                ],
+                "debutEcheance": null,
+                "finEcheance": null,
+                "idEcheance": "j0",
+                "nbRegion": 1,
+                "nomEcheance": null
+            },
+            {
+                "titreEcheance": "Pr\u00e9visions pour la nuit du dimanche 31 mai au lundi 1 juin",
+                "region": [
+                    {
+                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
+                        "situation": null,
+                        "observation": null,
+                        "ventEtMer": "VENT : Est \u00e0 Nord-Est 5 \u00e0 6, mollissant 4 \u00e0 5 en seconde partie de nuit.<br /><br />MER : peu agit\u00e9e \u00e0 agit\u00e9e.",
+                        "houle": "HOULE : Ouest 0.5 \u00e0 1 m sur pointe Bretagne, non significative ailleurs.",
+                        "vent": null,
+                        "temperature": null,
+                        "temps": null,
+                        "etatMer": null,
+                        "ts": "TEMPS : peu nuageux.",
+                        "visi": "VISIBILITE : bonne.",
+                        "indice": null,
+                        "idRegion": "cot3",
+                        "tmin": null,
+                        "tmax": null,
+                        "tmer": null
+                    }
+                ],
                 "debutEcheance": null,
                 "finEcheance": null,
                 "idEcheance": "n0",
                 "nbRegion": 1,
-                "nomEcheance": null,
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": "HOULE : Nord-Est 0.5 \u00e0 1 m de Br\u00e9hat \u00e0 la Pointe du Raz.",
-                        "idRegion": "cot3",
-                        "indice": null,
-                        "observation": null,
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": "TEMPS : passag\u00e8rement nuageux.",
-                        "vent": null,
-                        "ventEtMer": "VENT : Variable 1 \u00e0 3 en mer d'Iroise. Ailleurs, Est \u00e0 Nord-Est 4 \u00e0 5, mollissant progressivement 2 \u00e0 3.MER : peu agit\u00e9e \u00e0 agit\u00e9e, s'att\u00e9nuant.",
-                        "visi": "VISIBILITE : bonne."
-                    }
-                ],
-                "titreEcheance": "Pr\u00e9visions pour la nuit du vendredi 2 octobre au samedi 3 octobre"
+                "nomEcheance": null
             },
             {
+                "titreEcheance": "Tendance pour la journ\u00e9e du lundi 1 juin",
+                "region": [
+                    {
+                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
+                        "situation": null,
+                        "observation": null,
+                        "ventEtMer": "VENT : Nord-Est 4 \u00e0 5.<br /><br />MER : peu agit\u00e9e \u00e0 agit\u00e9e, s'att\u00e9nuant localement belle \u00e0 peu agit\u00e9e \u00e0 l'ouest du Cotentin l'apr\u00e8s-midi.",
+                        "houle": "HOULE : Ouest 0.5 \u00e0 1 m sur pointe Bretagne, non significative ailleurs.",
+                        "vent": null,
+                        "temperature": null,
+                        "temps": null,
+                        "etatMer": null,
+                        "ts": "TEMPS : beau temps ensoleill\u00e9.",
+                        "visi": "VISIBILITE : bonne.",
+                        "indice": null,
+                        "idRegion": "cot3",
+                        "tmin": null,
+                        "tmax": null,
+                        "tmer": null
+                    }
+                ],
                 "debutEcheance": null,
                 "finEcheance": null,
                 "idEcheance": "j1",
                 "nbRegion": 1,
-                "nomEcheance": null,
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": "HOULE : devenant partout non significative.",
-                        "idRegion": "cot3",
-                        "indice": null,
-                        "observation": null,
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": "TEMPS : beau temps passag\u00e8rement nuageux.",
-                        "vent": null,
-                        "ventEtMer": "VENT : Variable 1 \u00e0 3, parfois 4, d'Ouest dominant au sud d'Ouessant.MER : belle \u00e0 peu agit\u00e9e.",
-                        "visi": "VISIBILITE : bonne."
-                    }
-                ],
-                "titreEcheance": "Pr\u00e9visions pour la journ\u00e9e du samedi 3 octobre"
-            },
-            {
-                "debutEcheance": null,
-                "finEcheance": null,
-                "idEcheance": "j2",
-                "nbRegion": 1,
-                "nomEcheance": null,
-                "region": [
-                    {
-                        "etatMer": null,
-                        "houle": "HOULE : non significative, puis Sud-Est 1.5 m le soir au sud d'Ouessant.",
-                        "idRegion": "cot3",
-                        "indice": null,
-                        "observation": null,
-                        "situation": null,
-                        "temperature": null,
-                        "temps": null,
-                        "titreRegion": "entre le cap de la Hague et Penmarc'h",
-                        "tmax": null,
-                        "tmer": null,
-                        "tmin": null,
-                        "ts": "TEMPS : devenant tr\u00e8s nuageux \u00e0 couvert. Pluie et bancs de brume l'apr\u00e8s-midi.",
-                        "vent": null,
-                        "ventEtMer": "VENT : s'orientant Sud 2 \u00e0 4 la nuit, fra\u00eechissant Sud-Est 5 \u00e0 7 d'est en ouest en journ\u00e9e. Vent fort gagnant aussi l'ouest Cotentin le soir.MER : belle \u00e0 peu agit\u00e9e, devenant peu agit\u00e9e \u00e0 agit\u00e9e, localement forte sur Pointe Bretagne.",
-                        "visi": "VISIBILITE : bonne, devenant moyenne \u00e0 parfois mauvaise sous pluie et brume."
-                    }
-                ],
-                "titreEcheance": "Tendance pour la nuit du 3  au 4 et la journ\u00e9e du dimanche 4 octobre"
+                "nomEcheance": null
             }
         ],
+        "titreBulletin": "Bulletin c\u00f4te \"La Hague \u2013 Penmarc'h\" matin",
+        "uniteBulletin": "Vent moyen selon \u00e9chelle Beaufort.<br />Mer selon \u00e9chelle Douglas.<br />Heure l\u00e9gale = heure UTC+1 en hiver et heure UTC+2 en \u00e9t\u00e9.<br />Attention : en situation normale, les rafales peuvent \u00eatre sup\u00e9rieures de 40 % au vent moyen et les vagues maximales atteindre 2 fois la hauteur significative.",
+        "piedBulletin": "Prochain bulletin le dimanche 31 mai 2020, vers 12H30 l\u00e9gales",
+        "bulletinSpecial": "Pas d'avis de vent fort en cours ni pr\u00e9vu.",
+        "chapeauBulletin": "Origine M\u00e9t\u00e9o-France. <br />Bulletin c\u00f4tier pour la bande des 20 milles, du cap de la Hague \u00e0 la pointe de Penmarc'h, du dimanche 31 mai 2020 \u00e0 06H15 l\u00e9gales.",
+        "dateDeBase": "2020-05-31 03:40:58",
+        "dateDeFin": "2020-06-01 18:00:00",
+        "dateDeProduction": "2020-05-31 03:40:58",
         "idBulletin": null,
         "langueBulletin": "FR",
         "nbJourBulletin": null,
         "nomBulletin": null,
-        "piedBulletin": "Prochain bulletin le samedi 3 octobre 2015 vers 06H15 l\u00e9gales",
         "producteurBulletin": "CNP",
         "ridBulletin": null,
         "soustypeBulletin": "BMR",
-        "titreBulletin": "Bulletin c\u00f4te \"La Hague \u2013 Penmarc'h\" soir",
         "typeBulletin": "cote",
         "typePeriodeBulletin": "CE",
-        "uniteBulletin": "Vent moyen selon \u00e9chelle Beaufort.<br />Mer selon \u00e9chelle Douglas.<br />Heure l\u00e9gale = heure UTC+1 en hiver et heure UTC+2 en \u00e9t\u00e9.<br />Attention : en situation normale, les rafales peuvent \u00eatre sup\u00e9rieures de 40 % au vent moyen et les vagues maximales atteindre 2 fois la hauteur significative.",
         "zoneBulletin": "3"
     }
 ]

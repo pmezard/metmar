@@ -18,6 +18,8 @@ func dispatch() error {
 		return serveFn()
 	case galeCmd.FullCommand():
 		return galeFn()
+	case parseCmd.FullCommand():
+		return parseFn()
 	}
 	return fmt.Errorf("unknown command: %s", cmd)
 }
